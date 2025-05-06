@@ -4,9 +4,9 @@
   <groupId>it.unipd.mtss</groupId>
   <artifactId>roman-number</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>roman-number</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/GiacomoNalotto/Ass2</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,4 +15,28 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+      <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.1.2</version>
+            <executions>
+              <execution>
+                <id>checkstyle-validation</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <configLocation>google_checks.xml</configLocation>
+              <encoding>UTF-8</encoding>
+              <consoleOutput>true</consoleOutput>
+              <failsOnError>true</failsOnError>
+            </configuration>
+          </plugin>
+        </plugins>
+  </build>
 </project>
