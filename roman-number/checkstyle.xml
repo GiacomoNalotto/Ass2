@@ -5,8 +5,8 @@
 
 <module name="Checker">
     
-    <module name="FileTabCharacter"/>
-        <property name="fileExtensions" value="java, xml" />
+    <module name="FileTabCharacter">
+        <property name="fileExtensions" value="java, xml"/>
     </module>
     
     <module name="FileLength">
@@ -20,7 +20,7 @@
     <module name="TreeWalker">
         
         <module name="BooleanExpressionComplexity">
-            <property name="max" value="3" />
+            <property name="max" value="3"/>
         </module>
         
         <module name="CyclomaticComplexity">
@@ -32,12 +32,12 @@
         </module>
         
         <module name="EmptyCatchBlock">
-            <property name="commentFormat" value="This is expected" />
+            <property name="commentFormat" value="This is expected"/>
         </module>
         
         <module name="AvoidStarImport"/>
         
-        <module name="IllegalImport">
+        <module name="IllegalImport"/>
         
         <module name="NeedBraces"/>
         
