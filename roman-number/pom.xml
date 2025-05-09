@@ -7,6 +7,11 @@
   <version>1.0</version>
   <name>roman-number</name>
   <url>https://github.com/GiacomoNalotto/Ass2</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,6 +20,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
       <plugins>
           <plugin>
