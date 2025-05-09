@@ -24,7 +24,6 @@ jobs:
     - name: Upload Coverage to Coveralls
       if: success()
       working-directory: ./roman-number
-      uses: coverallsapp/github-action@v2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./target/site/jacoco/jacoco.xml
+      run: mvn coveralls:report
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
