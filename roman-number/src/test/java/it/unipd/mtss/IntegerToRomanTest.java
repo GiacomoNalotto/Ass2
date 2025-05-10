@@ -23,7 +23,7 @@ public class IntegerToRomanTest
     }
     
     @Test
-    public void intergerToRomanTest_10()
+    public void intergerToRomanTest_20()
     {   
         assertEquals("I", IntegerToRoman.convert(1));
         assertEquals("II", IntegerToRoman.convert(2));
@@ -35,18 +35,25 @@ public class IntegerToRomanTest
         assertEquals("VIII", IntegerToRoman.convert(8));
         assertEquals("IX", IntegerToRoman.convert(9));
         assertEquals("X", IntegerToRoman.convert(10));
+        assertEquals("XI", IntegerToRoman.convert(11));
+        assertEquals("XII", IntegerToRoman.convert(12));
+        assertEquals("XV", IntegerToRoman.convert(15));
+        assertEquals("XVII", IntegerToRoman.convert(17));
+        assertEquals("XIX", IntegerToRoman.convert(19));
+        assertEquals("XX", IntegerToRoman.convert(20));
+        
     }
 
 
     @Test
-    public void intergerToRomanBoundariesTest_10()
+    public void intergerToRomanBoundariesTest_20()
     {
         assertEquals("", IntegerToRoman.convert(-1));
         assertEquals("", IntegerToRoman.convert(0));
-        assertEquals("", IntegerToRoman.convert(11));
+        assertEquals("", IntegerToRoman.convert(21));
     }
     
-    public int romanToInteger_10(String romanNumeral) {
+    public int romanToInteger_20(String romanNumeral) {
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
         romanValues.put('V', 5);
@@ -72,9 +79,9 @@ public class IntegerToRomanTest
     }
     
     @Test(timeout = 1000)
-    public void romanToIntegerTest_10(){
-        for(int i = 1; i <= 10; i++){
-            assertEquals(i, romanToInteger_10(IntegerToRoman.convert(i)));
+    public void romanToIntegerTest_20(){
+        for(int i = 1; i <= 20; i++){
+            assertEquals(i, romanToInteger_20(IntegerToRoman.convert(i)));
         }
     };
 }
