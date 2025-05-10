@@ -2,7 +2,7 @@
 
 ![Java CI with Maven - Build Status](https://github.com/GiacomoNalotto/Ass2/actions/workflows/build.yml/badge.svg)
 ![Coverage](https://coveralls.io/repos/github/GiacomoNalotto/Ass2/badge.svg?branch=main)
- [![GitHub issues](https://img.shields.io/github/issues/Whyle/MTSS2)](https://github.com/Whyle/MTSS2/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/Whyle/MTSS2)](https://github.com/Whyle/MTSS2/commits/main) ![Unipd](https://img.shields.io/badge/MTSS2-UNIPD-red)
+ [![GitHub issues](https://img.shields.io/github/issues/Whyle/MTSS2)](https://github.com/Whyle/MTSS2/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/GiacomoNalotto/Ass2)](https://github.com/GiacomoNalotto/Ass2/commits/main) ![Unipd](https://img.shields.io/badge/MTSS2-UNIPD-red)
 
 ## Description
 
