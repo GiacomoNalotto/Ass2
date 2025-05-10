@@ -4,7 +4,22 @@
 ////////////////////////////////////////////////////////////////////
 
 package it.unipd.mtss;
-
+  
 public class IntegerToRoman {
+    private static final int[] values = {1};
+    private static final String[] symbols = {"I"};
     
+    public static String convert(int number) {
+        if (number <= 0 || number > 3) {
+            return "";
+        }
+        StringBuilder roman = new StringBuilder();
+        for (int i = 0; i < values.length; i++){
+            while (values[i] <= number) {
+                number -= values[i];
+                roman.append(symbols[i]);
+            }
+        }
+        return roman.toString();
+    }
 }

@@ -32,10 +32,11 @@ public class IntegerToRomanTest
 
 
     @Test
-    public void intergerToRomanNegativeTest_3()
+    public void intergerToRomanBoundariesTest_3()
     {
         assertEquals("", IntegerToRoman.convert(-3));
         assertEquals("", IntegerToRoman.convert(0));
+        assertEquals("", IntegerToRoman.convert(4));
     }
     
     public int romanToInteger_3(String romanNumeral) {
