@@ -73,7 +73,7 @@ public class RomanPrinter {
         return printAsciiArt(roman);
     }
   
-    private static String printAsciiArt(String romanNumber) {
+    public static String printAsciiArt(String romanNumber) {
         if (romanNumber == null || romanNumber.isEmpty()) {
             return "";
         }
@@ -102,7 +102,7 @@ public class RomanPrinter {
         return result.toString();
     }
     
-    private static String[] getArtForChar(char c) {
+    public static String[] getArtForChar(char c) {
         switch (Character.toUpperCase(c)) {
             case 'I': return I_ART;
             case 'V': return V_ART;

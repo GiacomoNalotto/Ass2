@@ -65,4 +65,15 @@ public class RomanPrinterTest {
         }
         //System.out.println(results.toString());
     }
+
+     @Test
+    public void testPrintAsciiArt_InvalidChar() {
+        assertEquals("", RomanPrinter.printAsciiArt("Z"));
+    }
+
+    @Test
+    public void testGetArtForChar_EdgeCases() {
+        assertNull(RomanPrinter.getArtForChar(' '));
+        assertNull(RomanPrinter.getArtForChar('1'));
+    }
 }
