@@ -23,7 +23,7 @@ public class IntegerToRomanTest
     }
     
     @Test
-    public void intergerToRomanTest_100()
+    public void intergerToRomanTest_500()
     {   
         assertEquals("I", IntegerToRoman.convert(1));
         assertEquals("IV", IntegerToRoman.convert(4));
@@ -53,25 +53,34 @@ public class IntegerToRomanTest
         assertEquals("XCV", IntegerToRoman.convert(95));
         assertEquals("XCIX", IntegerToRoman.convert(99));
         assertEquals("C", IntegerToRoman.convert(100));
+        assertEquals("CXL", IntegerToRoman.convert(140));
+        assertEquals("CL", IntegerToRoman.convert(150));
+        assertEquals("CC", IntegerToRoman.convert(200));
+        assertEquals("CCL", IntegerToRoman.convert(250));
+        assertEquals("CCC", IntegerToRoman.convert(300));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("CDXCIX", IntegerToRoman.convert(499));
+        assertEquals("D", IntegerToRoman.convert(500));
         
     }
 
 
     @Test
-    public void intergerToRomanBoundariesTest_100()
+    public void intergerToRomanBoundariesTest_500()
     {
         assertEquals("", IntegerToRoman.convert(-1));
         assertEquals("", IntegerToRoman.convert(0));
-        assertEquals("", IntegerToRoman.convert(101));
+        assertEquals("", IntegerToRoman.convert(501));
     }
     
-    public int romanToInteger_100(String romanNumeral) {
+    public int romanToInteger_500(String romanNumeral) {
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
         romanValues.put('V', 5);
         romanValues.put('X', 10);
         romanValues.put('L', 50);
         romanValues.put('C', 100);
+        romanValues.put('D', 500);
 
         int result = 0;
         int prevValue = 0;
@@ -93,9 +102,9 @@ public class IntegerToRomanTest
     }
     
     @Test(timeout = 1000)
-    public void romanToIntegerTest_100(){
-        for(int i = 1; i <= 100; i++){
-            assertEquals(i, romanToInteger_100(IntegerToRoman.convert(i)));
+    public void romanToIntegerTest_500(){
+        for(int i = 1; i <= 500; i++){
+            assertEquals(i, romanToInteger_500(IntegerToRoman.convert(i)));
         }
     };
 }
