@@ -10,7 +10,7 @@ public class IntegerToRoman {
     private static final String[] symbols = {"X", "IX", "V", "IV", "I"};
     
     public static String convert(int number) {
-        if (number <= 0 || number > 10) {
+        if (number <= 0 || number > 20) {
             return "";
         }
         StringBuilder roman = new StringBuilder();
