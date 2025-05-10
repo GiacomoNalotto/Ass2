@@ -17,13 +17,13 @@ jobs:
         distribution: 'temurin'
         cache: maven
       
-    - name: Build, Test and Checkstyle
+    - name: Build, Test, Checkstyle and generate Coverage
       working-directory: ./roman-number
-      run: mvn -B clean verify
+      run: mvn -B clean verify jacoco:report
 
-    - name: Upload Coverage to Coveralls
-      if: success()
-      working-directory: ./roman-number
-      run: mvn coveralls:report
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./roman-number/target/site/jacoco/jacoco.xml
+        format: jacoco
