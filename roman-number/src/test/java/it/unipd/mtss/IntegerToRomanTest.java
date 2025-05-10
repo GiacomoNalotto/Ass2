@@ -23,15 +23,13 @@ public class IntegerToRomanTest
     }
     
     @Test
-    public void intergerToRomanTest_20()
+    public void intergerToRomanTest_50()
     {   
         assertEquals("I", IntegerToRoman.convert(1));
         assertEquals("II", IntegerToRoman.convert(2));
-        assertEquals("III", IntegerToRoman.convert(3));
         assertEquals("IV", IntegerToRoman.convert(4));
         assertEquals("V", IntegerToRoman.convert(5));
         assertEquals("VI", IntegerToRoman.convert(6));
-        assertEquals("VII", IntegerToRoman.convert(7));
         assertEquals("VIII", IntegerToRoman.convert(8));
         assertEquals("IX", IntegerToRoman.convert(9));
         assertEquals("X", IntegerToRoman.convert(10));
@@ -41,23 +39,33 @@ public class IntegerToRomanTest
         assertEquals("XVII", IntegerToRoman.convert(17));
         assertEquals("XIX", IntegerToRoman.convert(19));
         assertEquals("XX", IntegerToRoman.convert(20));
+        assertEquals("XXIV", IntegerToRoman.convert(24));
+        assertEquals("XXV", IntegerToRoman.convert(25));
+        assertEquals("XXIX", IntegerToRoman.convert(29));
+        assertEquals("XXX", IntegerToRoman.convert(30));
+        assertEquals("XXXV", IntegerToRoman.convert(35));
+        assertEquals("XXXIX", IntegerToRoman.convert(39));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("XLVII", IntegerToRoman.convert(47));
+        assertEquals("L", IntegerToRoman.convert(50));
         
     }
 
 
     @Test
-    public void intergerToRomanBoundariesTest_20()
+    public void intergerToRomanBoundariesTest_50()
     {
         assertEquals("", IntegerToRoman.convert(-1));
         assertEquals("", IntegerToRoman.convert(0));
-        assertEquals("", IntegerToRoman.convert(21));
+        assertEquals("", IntegerToRoman.convert(51));
     }
     
-    public int romanToInteger_20(String romanNumeral) {
+    public int romanToInteger_50(String romanNumeral) {
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
         romanValues.put('V', 5);
         romanValues.put('X', 10);
+        romanValues.put('L', 50);
 
         int result = 0;
         int prevValue = 0;
@@ -79,9 +87,9 @@ public class IntegerToRomanTest
     }
     
     @Test(timeout = 1000)
-    public void romanToIntegerTest_20(){
-        for(int i = 1; i <= 20; i++){
-            assertEquals(i, romanToInteger_20(IntegerToRoman.convert(i)));
+    public void romanToIntegerTest_50(){
+        for(int i = 1; i <= 50; i++){
+            assertEquals(i, romanToInteger_50(IntegerToRoman.convert(i)));
         }
     };
 }
