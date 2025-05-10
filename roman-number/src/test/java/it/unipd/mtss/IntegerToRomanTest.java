@@ -23,7 +23,7 @@ public class IntegerToRomanTest
     }
     
     @Test
-    public void intergerToRomanTest_500()
+    public void intergerToRomanTest_1000()
     {   
         assertEquals("I", IntegerToRoman.convert(1));
         assertEquals("IV", IntegerToRoman.convert(4));
@@ -61,19 +61,24 @@ public class IntegerToRomanTest
         assertEquals("CD", IntegerToRoman.convert(400));
         assertEquals("CDXCIX", IntegerToRoman.convert(499));
         assertEquals("D", IntegerToRoman.convert(500));
+        assertEquals("DCC", IntegerToRoman.convert(700));
+        assertEquals("DCCCLXXVI", IntegerToRoman.convert(876));
+        assertEquals("CM", IntegerToRoman.convert(900));
+        assertEquals("CMXCIX", IntegerToRoman.convert(999));
+        assertEquals("M", IntegerToRoman.convert(1000));
         
     }
 
 
     @Test
-    public void intergerToRomanBoundariesTest_500()
+    public void intergerToRomanBoundariesTest_1000()
     {
         assertEquals("", IntegerToRoman.convert(-1));
         assertEquals("", IntegerToRoman.convert(0));
-        assertEquals("", IntegerToRoman.convert(501));
+        assertEquals("", IntegerToRoman.convert(1001));
     }
     
-    public int romanToInteger_500(String romanNumeral) {
+    public int romanToInteger_1000(String romanNumeral) {
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
         romanValues.put('V', 5);
@@ -81,6 +86,7 @@ public class IntegerToRomanTest
         romanValues.put('L', 50);
         romanValues.put('C', 100);
         romanValues.put('D', 500);
+        romanValues.put('M', 1000);
 
         int result = 0;
         int prevValue = 0;
@@ -102,9 +108,9 @@ public class IntegerToRomanTest
     }
     
     @Test(timeout = 1000)
-    public void romanToIntegerTest_500(){
-        for(int i = 1; i <= 500; i++){
-            assertEquals(i, romanToInteger_500(IntegerToRoman.convert(i)));
+    public void romanToIntegerTest_1000(){
+        for(int i = 1; i <= 1000; i++){
+            assertEquals(i, romanToInteger_1000(IntegerToRoman.convert(i)));
         }
     };
 }
