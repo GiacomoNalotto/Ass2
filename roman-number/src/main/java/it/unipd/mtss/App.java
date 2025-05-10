@@ -11,20 +11,7 @@ public class App {
             System.out.println("Usage: java App <number>");
             return;
         }
-        try {
-            int number = Integer.parseInt(args[0]);
-            String romanArt = RomanPrinter.print(number);
-            
-            if (romanArt.isEmpty()) {
-                System.out.println("Error: Number must be between 1 and 1000");
-            } else {
-                System.out.println("ASCII art for Roman number " + 
-                    IntegerToRoman.convert(number) + ":");
-                System.out.println(romanArt);
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Please provide a valid integer");
-        }
+        checkOutput(args[0]);
     }
 
     public static void checkOutput(String input) {
