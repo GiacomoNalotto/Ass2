@@ -63,6 +63,6 @@ public class RomanPrinterTest {
             assertNotNull("Output for " + i + " should not be null", output);
             results.append(output).append("- ").append(i).append("\n");
         }
-        System.out.println(results.toString());
+        //System.out.println(results.toString());
     }
 }

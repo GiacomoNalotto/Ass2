@@ -5,18 +5,42 @@
 
 package it.unipd.mtss;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java App <number>");
+            return;
+        }
+        try {
+            int number = Integer.parseInt(args[0]);
+            String romanArt = RomanPrinter.print(number);
+            
+            if (romanArt.isEmpty()) {
+                System.out.println("Error: Number must be between 1 and 1000");
+            } else {
+                System.out.println("ASCII art for Roman number " + 
+                    IntegerToRoman.convert(number) + ":");
+                System.out.println(romanArt);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please provide a valid integer");
+        }
     }
 
     public static void checkOutput(String input) {
-        return;
+        try {
+            int number = Integer.parseInt(input);
+            String romanArt = RomanPrinter.print(number);
+            
+            if (romanArt.isEmpty()) {
+                System.out.println("Error: Number must be between 1 and 1000");
+            } else {
+                System.out.println("ASCII art for Roman number " + 
+                    IntegerToRoman.convert(number) + ":");
+                System.out.println(romanArt);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please provide a valid integer");
+        }
     }
 }
